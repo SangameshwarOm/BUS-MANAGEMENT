@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Passenger Details</title>
+</head>
+<body>
+    <h2>Get Passenger Details</h2>
+    <form action="TicketshowServlet" method="post">
+        <label for="passenger_number">Enter Passenger Number:</label>
+        <input type="text" id="passenger_number" name="passenger_number" required>
+        <button type="submit">Get Details</button>
+    </form>
+
+    <!-- Display area for passenger details -->
+    <div id="passengerDetails">
+        <!-- Details will be displayed here -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Ensure the title and container stack vertically */
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url(https://static.vecteezy.com/system/resources/previews/024/942/076/non_2x/double-decker-bus-speeds-through-city-traffic-commuters-on-the-move-generated-by-ai-free-photo.jpg);
+            /* Add your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .welcome-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            color: #333;
+            /* Dark text color */
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #000000;
+            /* Green color for the welcome message */
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid  #FFFFFF;
+            /* Green border */
+            background-color: #000000;
+            /* Green background */
+            color:  #00CCCC;
+            /* White text */
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .button-container a:hover {
+            background-color: #009999;
+            /* Darker green on hover */
+            color: #fff;
+        }
+
+        .title {
+            font-size: 24px;
+            color:	#000000;
+            /* White text for the title */
+            margin-bottom: 20px;
+            background-color: #00CCCC; /* White background for the title */
+            padding: 10px 20px; /* Add padding for better appearance */
+            border-radius: 5px; /* Add border-radius for rounded corners */
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1><div class="title">LEO TRAVLS</div></h1>
+    <div class="welcome-container">
+        <h2>Welcome</h2>
+
+        <div class="button-container">
+            <a href="Login.html">Login</a>
+            <a href="index.html">Register</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0;
+            background-size: cover;
+            background-image: url(https://static.vecteezy.com/system/resources/previews/024/942/076/non_2x/double-decker-bus-speeds-through-city-traffic-commuters-on-the-move-generated-by-ai-free-photo.jpg);
+            transition: background 0.5s ease-in-out;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #4caf50; /* Green color for the header */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        form {
+            margin-top: 20px;
+            transition: margin 0.3s ease-in-out;
+            text-align: left; /* Align form elements to the left */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ffff;
+            font-weight: bold;
+            transition: color 0.5s ease-in-out;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto; /* Center the button */
+            background-color: #00CCCC;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #009999;
+        }
+
+        .container:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        form:hover {
+            margin-top: 25px;
+        }
+
+        label:hover {
+            color: #555;
+        }
+
+        input:hover,
+        select:hover {
+            border-color: #999;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            margin-left: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <style>
+        /* Styles remain the same */
+    </style>
+</head>
+
+<body>
+
+    <div class="welcome-container">
+        <form id="busForm" method="post" action="SeatnumberServlet">
+            <!-- Input field for selecting bus name -->
+            <div class="bus-container" id="busSelection">
+                <label for="busName">Select Bus:</label>
+                <select id="busName" name="busName">
+                    <option value="" disabled selected>Select Bus</option>
+                    <!-- Bus options will be dynamically added here -->
+                </select>
+            </div>
+
+            <!-- Input field for selecting seat number -->
+            <div class="seat-container" id="seatSelection">
+                <label for="seatNo">Select Seat:</label>
+                <select id="seatNo" name="seatNo">
+                    <option value="" disabled selected>Select Seat</option>
+                    <!-- Seat options will be dynamically added here -->
+                </select>
+            </div>
+
+            <!-- Submit button container -->
+            <div class="submit-container">
+                <!-- Submit button to navigate to the next page -->
+                <button class="submit-button" type="button" onclick="submitForm()">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+        // Function to get query parameter by name
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Retrieve and parse the busNames from the query parameter
+        const busNames = JSON.parse(decodeURIComponent(getQueryParam('busNames')));
+
+        // Populate the bus selection dropdown with available bus names
+        const busDropdown = document.getElementById('busName');
+        busNames.forEach(function (busName) {
+            const option = document.createElement('option');
+            option.value = busName;
+            option.textContent = busName;
+            busDropdown.appendChild(option);
+        });
+
+        // Function to generate seat options based on the selected bus
+        function generateSeatOptions(busName) {
+            const seatContainer = document.getElementById('seatNo');
+            seatContainer.innerHTML = '<option value="" disabled selected>Select Seat</option>';
+
+            // Dynamically generate seat options based on busName
+            const seatOptions = document.createElement('optgroup');
+            seatOptions.label = 'Choose Seat';
+
+            // Example: Adding 40 seat options
+            for (let i = 1; i <= 40; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                seatOptions.appendChild(option);
+            }
+
+            seatContainer.appendChild(seatOptions);
+        }
+
+        // Event listener for bus selection change
+        busDropdown.addEventListener('change', function () {
+            const selectedBus = this.value;
+            if (selectedBus) {
+                // Generate seat options based on the selected bus
+                generateSeatOptions(selectedBus);
+            }
+        });
+
+        // Function to navigate to the next page
+        function submitForm() {
+            // Check if both bus and seat are selected
+            const selectedBus = document.getElementById('busName').value;
+            const selectedSeat = document.getElementById('seatNo').value;
+            if (selectedBus && selectedSeat) {
+                // Submit the form with selected bus and seat
+                document.getElementById('busForm').submit();
+            } else {
+                // If either bus or seat is not selected, show an alert
+                alert('Please select both bus and seat');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

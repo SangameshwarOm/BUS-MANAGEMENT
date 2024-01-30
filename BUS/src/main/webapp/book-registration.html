@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Registration</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+			background-color: rgba(255, 255, 255, 0.9);            
+			border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 400px;
+            margin: 0 auto; /* Center the form */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #4caf50; /* Green color for the header */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left; /* Left align the labels */
+        }
+
+        input,
+        select {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: left; /* Left align the input fields */
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body style="background-image: url(https://static.vecteezy.com/system/resources/previews/024/942/076/non_2x/double-decker-bus-speeds-through-city-traffic-commuters-on-the-move-generated-by-ai-free-photo.jpg)
+; background-size: cover;">
+    <div class="container">
+        <h2>Book Registration</h2>
+        <form action="BookRegistrationServlet" method="post">
+            <label for="bus_name">Bus Name</label>
+            <input type="text" name="bus_name" required>
+
+             <label for="bording_point">Boarding Point</label>
+            <select name="bording_point">
+                <option value="" selected disabled>Select Boarding Point</option>
+                 	<option value="ADIRAMPATTINAM">ADIRAMPATTINAM</option> 
+					<option value="ADUTHURAI">ADUTHURAI</option> 
+					<option value="ANAIKARAI">ANAIKARAI</option> 
+					<option value="ANDIMADAN">ANDIMADAM</option> 
+					<option value="ANGIYAN">ANGIYAM</option> 
+					<option value="ANNAMANGALAM">ANNAMANGALAM</option> 
+					<option value="ARAKKONAM">ARAKKONAM</option>
+					<option value="ARALVAIMOZHI">ARALVAIMOZHI</option> 
+					<option value="ARANTHANGI">ARANTHANGI</option> 
+					<option value="ARASALUR">ARASALUR</option> 
+					<option value="ARAVAKURICHI">ARAVAKURICHI</option>
+					<option value="ARIYALUR">ARIYALUR</option>
+					<option value="ATTUR">ATTUR</option>
+					<option value="ATHIYUR">ATHIYUR</option>
+					<option value="AVADI">AVADI</option> 
+					<option value="AVANAM">AVANAM</option>
+					<option value="AVUDAYARKOIL">AVUDAYARKOIL</option> 
+					<option value="B.METTUR">B.METTUR</option> 
+					<option value="BATLAGUNDU">BATLAGUNDU</option>
+					<option value="BANGALORE">BANGALORE</option> 
+					<option value="BHAVANI">BHAVANI</option> 
+					<option value="BHEL">BHEL</option> 
+					<option value="BODI">BODI</option> 
+					<option value="CC QUARY SITE">CC QUARY SITE</option> 
+					<option value="CHENNAI">CHENNAI</option>  
+					<option value="CHETTIKULAN">CHETTIKULAM</option>
+					<option value="CHIDAMBARAN">CHIDAMBARAN</option>
+					<option value="CHINNADHARAPURAN">CHINNADHARAPURAM</option>
+					<option value="CHINNANUTTIL">CHINNAMUTTIL</option> 
+					<option value="CHITTOORE">CHITTOORE</option>slat
+					<option value="COIMBATORE">COIMBATORE</option> 
+					<option value="COONOOR">COONOOR</option> 
+					<option value="CUDDALORE">CUDDALORE</option> 
+					<option value="CUMBUN">CUNBUM </option> alot
+					<option value="DEVAKOTTAI">DEVAKOTTAI</option> 
+					<option value="DHARAPURAN">DHARAPURAM</option>
+					<option value="DHARMAPURI">DHARMAPURI</option>
+					<option value="DINDIGUL">DINDIGUL</option> 
+					<option value="EDAPPADI">EDAPPADI</option> 
+					<option value="ELANGAKURICHY">ELANGAKURICHY</option>
+					<option value="ERNAKULAN">ERNAKULAM</option>  
+					<option value="ERODE">ERODE</option> 
+					<option value="ERVADI">ERVADI</option> 
+					<option value="GANDHARVAKOTTAI">GANDHARVAKOTTAI</option> 
+					<option value="GANGAVALLI">GANGAVALLI</option> 
+					<option value="GINGEE">GINGEE </option> 
+					<option value="GOBICHETTIPALAYAM">GOBICHETTIPALAYAM</option> 
+					<option value="GUDALORE (CUMBUM)">GUDALORE (CUMBUM)</option>
+					<option value="GUJILAMPARAI">GUJILAMPARAI</option> 
+					<option value="HOSUR">HOSUR</option>
+					<option value="ILAYANGUDI">ILAYANGUDI</option>
+					<option value="ILLUPUR">ILLUPUR</option> 
+					<option value="JAVANKONDAM">JAYANKONDAM</option> 
+					<option value="KADAVUR">KADAVUR</option> 
+					<option value="KADAYA NALLUR">KADAYA NALLUR</option> 
+					<option value="KALAYARKOIL">KALAYARKOIL</option>
+					<option value="KALLANAI">KALLANAI</option> 
+					<option value="KALLAPATTI">KALLAPATTI</option>  
+					<option value="KAMUDI">KAMUDI</option> 
+					<option value="KANAPADI">KANAPADI</option> 
+					<option value="KANCHIPURAM">KANCHIPURAM</option> 
+					<option value="KANGEYAM">KANGEYAM</option> 
+					<option value="KANYAKUMARI">KANYAKUMARI</option> 
+					<option value="KARAIKAL">KARAIKAL</option>
+					<option value="KARAIKUDI">KARAIKUDI</option>  
+					<option value="KARMANGALAM">KARMANGALAM</option> 
+					<option value="KARUMATHAMPA">KARUMATHAMPA</option>
+					<option value="KARUR">KARUR</option> 
+					<option value="KATTUMANNARKUDI">KATTUMANNARKUDI</option>
+					<option value="KATTUPUTHUR">KATTUPUTHUR</option> 
+					<option value="KAVUNDAPADI">KAVUNDAPADI</option> 
+					<option value="KAYALPATTINAM">KAYALPATTINAM</option> 
+					<option value="KILUMATHUR">KILUMATHUR</option> 
+					<option value="KILVELUR (NAGAI)">KILVELUR (NAGAI)</option>
+					<option value="KODAIKANAL">KODAIKANAL</option> 
+					<option value="KOLAKKANATHAM">KOLAKKANATHAM</option>
+					<option value="KOLLUMANGUDI">KOLLUMANGUDI</option>
+					<option value="KORADACHERI">KORADACHERI</option> 
+					<option value="KOTHAGIRI">KOTHAGIRI</option> 
+					<option value="KΟΤΤΑΙΡΑΤΤΙΝΑΜ">KOTTAIPATTINAM</option> 
+					<option value="KOTTARAKUNDRU">KOTTARAKUNDRU</option> 
+					<option value="KOTTARAM">KOTTARAM</option> 
+					<option value="KOTTATHUR">KOTTATHUR</option>
+					<option value="KOVILUR">KOVILUR</option> 
+					<option value="KOVILPATTI">KOVILPATTI</option> 
+					<option value="KRISHNAGIRI">KRISHNAGIRI</option>
+					<option value="KUDIKADU">KUDIKADU</option>
+					<option value="KUJILAMPARAX">KUJILAMPARAI</option> 
+					<option value="KULITHALAI">KULITHALAI</option>
+					<option value="KUMBAKONAM">KUMBAKONAM</option> 
+					<option value="KUMILY">KUMILY</option>
+					<option value="KUNNAM">KUNNAM</option>
+					<option value="LABBAIKUDIKADU">LABBAIKUDIKADU</option> 
+					<option value="LADAPURAM">LADAPURAM</option> 
+					<option value="MAALVAI, KANNANOOR">MAALVAI, KANNANOOR</option> 
+					<option value="MADHAVARAM">MADHAVARAM</option>
+					<option value="MADURAI">MADURAI</option>
+					<option value="MALAYAPATTI">MALAYAPATTI</option> 
+					<option value="MANAMELKUDI">MANAMELKUDI</option>
+					<option value="MANAPARAI">MANAPARAI</option>
+					<option value="MANJINI">MANJINI</option>
+					<option value="MANNARGUDI">MANNARGUDI</option> 
+					<option value="MARAMADAKKI">MARAMADAKKI</option> 
+					<option value="MARTHANDAM">MARTHANDAM</option>
+					<option value="MARUTHAMALAI">MARUTHAMALAI</option> 
+					<option value="MAYANUR">MAYANUR</option> 
+					<option value="MAYILADUTHURAI">MAYILADUTHURAI</option> 
+					<option value="METTUPALAYAM">METTUPALAYAM</option>
+					<option value="METTUPALAYAM (THURAIYUR)">METI ALAYAM (THURAIYUR)</option>
+					<option value="METTUR">METTUR</option> 
+					<option value="METTUPATTI">METTUPATTI</option> 
+					<option value="MIMISAL">MIMISAL</option>
+					<option value="MOHANUR">MOHANUR</option> 
+					<option value="MULANOOR">MULANDOR</option> 
+					<option value="MUSIRI">MUSIRI</option> 
+					<option value="MUTHUKULATHUR">MUTHUKULATHUR</option> 
+					<option value="MUTHUPETTAI">MUTHUPETTAI</option> 
+					<option value="NAGAPATTINAM">NAGAPATTINAM</option> 
+					<option value="NAGERCOIL">NAGERCOIL</option> 
+					<option value="NAGORE">NAGORE</option> 
+					<option value="NAMAKKAL">NAMAKKAL</option> 
+					<option value="NANGUNERI">NANGUNERI</option> 
+					<option value="NANNILAM">NANNILAM</option> 
+					<option value="NARASINGAPURAM">NARASINGAPURAM</option>
+					<option value="NATHAM">NATHAM</option>
+					<option value="NAVALUR">NAVALUR</option> 
+					<option value="NEYVELI">NEYVELI</option> 
+					<option value="NEYVELI TOWNSHIP">NEYVELI TOWNSHIP</option> 
+					<option value="NIDAMANGALAM">NIDAMANGALAM</option> 
+					<option value="ODDAMPATTI">ODDAMPATTI</option> 
+					<option value="0OTY">00TY</option> 
+					<option value="ORATHANADU">ORATHANADU</option>
+					<option value="OTTANCHATHIRAM">OTTANCHATHIRAM</option>
+					<option value="PACHAPERUMAL">PACHAPERUMAL</option> 
+					<option value="PADALUR">PADALUR</option> 
+					<option value="PADUGALAN">PADUGALAM</option> 
+					<option value="PALAKKAD">PALAKKAD</option> 
+					<option value="PALANI">PALANI</option> 
+					<option value="PALAYAM">PALAYAM</option>
+					<option value="PALLADAM">PALLADAM</option> 
+					<option value="PALLAPATTI">PALLAPATTI</option> 
+					<option value="PANDAMANGALAM">PANDAMANGALAM</option> 
+					<option value="PANRUTI">PANRUTI</option>
+					<option value="PAPANASAM (KUM)">PAPANASAM (KUM)</option>
+					<option value="PARAMAKUDI">PARAMAKUDI</option>
+					<option value="PATTUKOTTAI">PATTUKOTTAI</option> 
+					<option value="PERAMBALUR">PERAMBALUR</option>
+					<option value="PERAVOORANI">PERAVOORANI</option>
+					<option value="PERIYAKULAM">PERIYAKULAM</option>
+					<option value="PERUMAGALUR">PERUMAGALUR</option> 
+					<option value="PIRANMALAI">PIRANMALAI</option>
+					<option value="POLLACHI">POLLACHI</option> 
+					<option value="POLUR">POLUR</option> 
+					<option value="PONDICHERRY">PONDICHERRY</option>
+					<option value="PONNAMARAVATHY">PONNAMARAVATHY</option>
+					<option value="POOLAMBADI">POOLAMBADI</option> 
+					<option value="POOLANKURICHY">POOLANKURICHY</option> 
+					<option value="POONAMALLE">POONAMALLE</option> 
+					<option value="POONDI MATHA">POONDI MATHA</option> 
+					<option value="PUDUKOTTAI">PUDUKOTTAI</option> 
+					<option value="PULIANCHOLAI">PULIANCHOLAI</option>
+					<option value="PULIYANGUDI">PULIYANGUDI</option> 
+					<option value="PUTTHUTHOPPU">PUTTHUTHOPPU</option> 
+					<option value="R.S.MANGALAM">R.S.MANGALAM</option> 
+					<option value="RAJAPALAYAM">RAJAPALAYAM</option>
+					<option value="RAMANATHAPURAM">RAMANATHAPURAM</option> 
+					<option value="RAMESWARAM">RAMESWARAM</option> 
+					<option value="RASIPURAM">RASIPURAM</option>
+					<option value="S.PURAM">S.PURAM</option> 
+					<option value="SALEM">SALEM </option>
+					<option value="SANKAGIRI">SANKAGIRI</option> 
+					<option value="SANIKARAPURAM">SANKARAPURAM</option> 
+					<option value="SATHIYAMANGALAM">SATHIYAMANGALAM</option>
+					<option value="SATTUR">SATTUR</option>
+					<option value="SAYALKUDI">SAYALKUDI</option> 
+					<option value="SELLIPALAYAM">SELLIPALAYAM</option> 
+					<option value="SENGOTTAI">SENGOTTAI</option> 
+					<option value="SENTH">SENTH</option> 
+					<option value="SENTHARAPATTI">SENTHARAPATTI</option> 
+					<option value="SIKKAL (NAGAI)">SIKKAL (NAGAI)</option> 
+					<option value="SINGAMPUNARI">SINGAMPUNARI</option> 
+					<option value="SIRKALI">SIRKALI</option>
+					<option value="SIRKAZHI">SIRKAZHI</option>
+					<option value="SIVAGANGAI">SIVAGANGAI</option> 
+					<option value="SOBANAPURAM">SOBANAPURAM</option> 
+					<option value="SOMUR">SOMUR</option> 
+					<option value="SRIPERAMBUDUR">SRIPERAMBUDUR</option> 
+					<option value="SRI MUSHNAM">SRI MUSHNAM</option> 
+					<option value="SRIPERUMBUDUR">SRIPERUMBUDUR</option> 
+					<option value="SRIRA">SRIRA</option>
+					<option value="SRIRANGAM">SRIRANGAM</option> 
+					<option value="SRIVILLIPUTHUR">SRIVILLIPUTHUR</option> 
+					<option value="SUSINDRAM">SUSINDRAM</option>
+					<option value="T.KALAMBUR">T.KALAMBUR</option> 
+					<option value="TENKASI">TENKASI</option>
+					<option value="THAMMAMPATTI">THAMMAMPATTI</option> 
+					<option value="THANJAVUR">THANJAVUR</option> 
+					<option value="THANTHONDRI">THANTHONDRI</option> 
+					<option value="THARAGAMPATTI">THARAGAMPATTI</option> 
+					<option value="THATHAIYANGAR">THATHAIYANGAR</option> 
+					<option value="THENI">THENI</option> 
+					<option value="THENNUR">THENNUR</option> 
+					<option value="THEVARAM">THEVARAM</option> 
+					<option value="THIRUCHENDUR">THIRUCHENDUR</option> 
+					<option value="THIRUCHENGODE">THIRUCHENGODE</option> 
+					<option value="THIRUKATTUPALLI">THIRUKATTUPALLI</option>
+					<option value="THIRUMANOOR">THIRUMANOOR</option> 
+					<option value="THIRUMAYAM">THIRUMAYAM</option> 
+					<option value="THIRUMAZHAPADI">THIRUMAZHAPADI</option> 
+					<option value="THIRUNALLAR (KARAIKKAL)">THIRUNALLAR (KARAIKKAL)</option>
+					<option value="THIRUPUNAVASAL">THIRUPUNAVASAL</option> 
+					<option value="THIRUTHANI">THIRUTHANI</option> 
+					<option value="THIRUTHURAIPOONDI">THIRUTHURAIPOONDI</option> 
+					<option value="THIRUVADANAI">THIRUVADANAI</option> 
+					<option value="THIRUVAIYARU">THIRUVAIYARU</option>
+					<option value="THIRUVARUR">THIRUVARUR</option>
+					<option value="THIRUVETRIYUR">THIRUVETRIYUR</option> 
+					<option value="THOGAIMALAI">THOGAIMALAI</option> 
+					<option value="THONDI">THONDI</option>  
+					<option value="THOOTHUKUDI">THOOTHUKUDI</option>
+					<option value="THOTTIYAM">THOTTIYAM</option> 
+					<option value="THOVALAI">THOVALAI</option> 
+					<option value="THUCKKALAY">THUCKKALAY</option>
+					<option value="THURAIYUR">THURAIYUR</option> 
+					<option value="THUVARANKURICHI">THUVARANKURICHI</option> 
+					<option value="TIRUNELVELI">TIRUNELVELI</option> 
+					<option value="TIRUPATHI">TIRUPATHI</option>
+					<option value="TIRUPATTUR (SIVAGANGAI)">TIRUPATTUR (SIVAGANGAI)</option>
+					<option value="TIRUPATTUR (VELLORE)">TIRUPATTUR (VELLORE)</option>  
+					<option value="TIRUPPUR">TIRUPPUR</option> 
+					<option value="TIRUVANNAHALAI">TIRUVANNAMALAI</option> 
+					<option value="TITTAGUDI">TITTAGUDI</option> 
+					<option value="TITTAGUDI BROR">TITTAGUDI BROR</option>
+					<option value=-"TRICHY">TRICHY</option>
+					<option value="UDUMALPETTAI">UDUMALPETTAI</option>
+					<option value-"TRISSUR">TRISSUR</option> 
+					<option value="ULUNDURPETTAI">ULUNDURPETTAI</option>
+					<option value="UNNIYUR">UNNIYUR</option> 
+					<option value="UPPILIAPPANKOVIL">UPPILIAPPANKOVIL</option>
+					<option value="UPPLIAYAPURAN">UPPLIAYAPURAM</option>
+					<option value="UTHAN">UTHAM</option> 
+					<option value="VADALUR">VADALUR</option>
+					<option value="VADAPATHINANGALAM">VADAPATHIMANGALAN</option> 
+					<option value="VADASERI (PATTUKOTTAI)">VADASERI (PATTUKOTTAI)</option>
+					<option value="VADUGAPATTI">VADUGAPATTI</option>
+					<option value="VADUVUR (MANNAI)">VADUVUR (MANNAI)</option> 
+					<option value="VALLIYOOR">VALLIYOOR</option>
+					<option value="VANDHAVASI">VANDHAVASI</option>
+					<option value="VANNARAPETTAIL">VANNARAPETTAI</option> 
+					<option value="VASHISHAPUR">VASHISHAPUR</option> 
+					<option value="VATAHNAKOTTAI">VATAHNAKOTTAI</option> 
+					<option value="VEDARANYAM">VEDARANYAM</option>
+					<option value="VEDASANDUR">VEDASANDUR</option>
+					<option value="VEERAPPUR">VEERAPPUR</option> 
+					<option value="VELANKANNI">VELANKANNI</option>
+					<option value="VELLAMADAM">VELLAMADAM</option>
+					<option value="VELLORE">VELLORE</option> 
+					<option value="VELLUVADI">VELLUVADI</option> 
+					<option value="VELUR">VELUR</option> 
+					<option value="VENKADATHANUR">VENKADATHANUR</option> 
+					<option value="VEPPUR">VEPPUR</option> 
+					<option value="VILLUPURAM">VILLUPURAM</option> 
+					<option value="VIRUDHACHALAM">VIRUDHACHALAM</option>  
+					<option value="VIRUDHUNAGAR">VIRUDHUNAGAR </option>
+					<option value="VOIMEDU (VEDARANYAM)">VOIMEDU (VEDARANYAM)</option>
+                
+            </select>
+
+            <label for="droping_point">Dropping Point</label>
+            <select name="droping_point">
+                <option value="" selected disabled>Select Dropping Point</option>
+                 	<option value="ADIRAMPATTINAM">ADIRAMPATTINAM</option> 
+					<option value="ADUTHURAI">ADUTHURAI</option> 
+					<option value="ANAIKARAI">ANAIKARAI</option> 
+					<option value="ANDIMADAN">ANDIMADAM</option> 
+					<option value="ANGIYAN">ANGIYAM</option> 
+					<option value="ANNAMANGALAM">ANNAMANGALAM</option> 
+					<option value="ARAKKONAM">ARAKKONAM</option>
+					<option value="ARALVAIMOZHI">ARALVAIMOZHI</option> 
+					<option value="ARANTHANGI">ARANTHANGI</option> 
+					<option value="ARASALUR">ARASALUR</option> 
+					<option value="ARAVAKURICHI">ARAVAKURICHI</option>
+					<option value="ARIYALUR">ARIYALUR</option>
+					<option value="ATTUR">ATTUR</option>
+					<option value="ATHIYUR">ATHIYUR</option>
+					<option value="AVADI">AVADI</option> 
+					<option value="AVANAM">AVANAM</option>
+					<option value="AVUDAYARKOIL">AVUDAYARKOIL</option> 
+					<option value="B.METTUR">B.METTUR</option> 
+					<option value="BATLAGUNDU">BATLAGUNDU</option>
+					<option value="BANGALORE">BANGALORE</option> 
+					<option value="BHAVANI">BHAVANI</option> 
+					<option value="BHEL">BHEL</option> 
+					<option value="BODI">BODI</option> 
+					<option value="CC QUARY SITE">CC QUARY SITE</option> 
+					<option value="CHENNAI">CHENNAI</option>  
+					<option value="CHETTIKULAN">CHETTIKULAM</option>
+					<option value="CHIDAMBARAN">CHIDAMBARAN</option>
+					<option value="CHINNADHARAPURAN">CHINNADHARAPURAM</option>
+					<option value="CHINNANUTTIL">CHINNAMUTTIL</option> 
+					<option value="CHITTOORE">CHITTOORE</option>slat
+					<option value="COIMBATORE">COIMBATORE</option> 
+					<option value="COONOOR">COONOOR</option> 
+					<option value="CUDDALORE">CUDDALORE</option> 
+					<option value="CUMBUN">CUNBUM </option> alot
+					<option value="DEVAKOTTAI">DEVAKOTTAI</option> 
+					<option value="DHARAPURAN">DHARAPURAM</option>
+					<option value="DHARMAPURI">DHARMAPURI</option>
+					<option value="DINDIGUL">DINDIGUL</option> 
+					<option value="EDAPPADI">EDAPPADI</option> 
+					<option value="ELANGAKURICHY">ELANGAKURICHY</option>
+					<option value="ERNAKULAN">ERNAKULAM</option>  
+					<option value="ERODE">ERODE</option> 
+					<option value="ERVADI">ERVADI</option> 
+					<option value="GANDHARVAKOTTAI">GANDHARVAKOTTAI</option> 
+					<option value="GANGAVALLI">GANGAVALLI</option> 
+					<option value="GINGEE">GINGEE </option> 
+					<option value="GOBICHETTIPALAYAM">GOBICHETTIPALAYAM</option> 
+					<option value="GUDALORE (CUMBUM)">GUDALORE (CUMBUM)</option>
+					<option value="GUJILAMPARAI">GUJILAMPARAI</option> 
+					<option value="HOSUR">HOSUR</option>
+					<option value="ILAYANGUDI">ILAYANGUDI</option>
+					<option value="ILLUPUR">ILLUPUR</option> 
+					<option value="JAVANKONDAM">JAYANKONDAM</option> 
+					<option value="KADAVUR">KADAVUR</option> 
+					<option value="KADAYA NALLUR">KADAYA NALLUR</option> 
+					<option value="KALAYARKOIL">KALAYARKOIL</option>
+					<option value="KALLANAI">KALLANAI</option> 
+					<option value="KALLAPATTI">KALLAPATTI</option>  
+					<option value="KAMUDI">KAMUDI</option> 
+					<option value="KANAPADI">KANAPADI</option> 
+					<option value="KANCHIPURAM">KANCHIPURAM</option> 
+					<option value="KANGEYAM">KANGEYAM</option> 
+					<option value="KANYAKUMARI">KANYAKUMARI</option> 
+					<option value="KARAIKAL">KARAIKAL</option>
+					<option value="KARAIKUDI">KARAIKUDI</option>  
+					<option value="KARMANGALAM">KARMANGALAM</option> 
+					<option value="KARUMATHAMPA">KARUMATHAMPA</option>
+					<option value="KARUR">KARUR</option> 
+					<option value="KATTUMANNARKUDI">KATTUMANNARKUDI</option>
+					<option value="KATTUPUTHUR">KATTUPUTHUR</option> 
+					<option value="KAVUNDAPADI">KAVUNDAPADI</option> 
+					<option value="KAYALPATTINAM">KAYALPATTINAM</option> 
+					<option value="KILUMATHUR">KILUMATHUR</option> 
+					<option value="KILVELUR (NAGAI)">KILVELUR (NAGAI)</option>
+					<option value="KODAIKANAL">KODAIKANAL</option> 
+					<option value="KOLAKKANATHAM">KOLAKKANATHAM</option>
+					<option value="KOLLUMANGUDI">KOLLUMANGUDI</option>
+					<option value="KORADACHERI">KORADACHERI</option> 
+					<option value="KOTHAGIRI">KOTHAGIRI</option> 
+					<option value="KΟΤΤΑΙΡΑΤΤΙΝΑΜ">KOTTAIPATTINAM</option> 
+					<option value="KOTTARAKUNDRU">KOTTARAKUNDRU</option> 
+					<option value="KOTTARAM">KOTTARAM</option> 
+					<option value="KOTTATHUR">KOTTATHUR</option>
+					<option value="KOVILUR">KOVILUR</option> 
+					<option value="KOVILPATTI">KOVILPATTI</option> 
+					<option value="KRISHNAGIRI">KRISHNAGIRI</option>
+					<option value="KUDIKADU">KUDIKADU</option>
+					<option value="KUJILAMPARAX">KUJILAMPARAI</option> 
+					<option value="KULITHALAI">KULITHALAI</option>
+					<option value="KUMBAKONAM">KUMBAKONAM</option> 
+					<option value="KUMILY">KUMILY</option>
+					<option value="KUNNAM">KUNNAM</option>
+					<option value="LABBAIKUDIKADU">LABBAIKUDIKADU</option> 
+					<option value="LADAPURAM">LADAPURAM</option> 
+					<option value="MAALVAI, KANNANOOR">MAALVAI, KANNANOOR</option> 
+					<option value="MADHAVARAM">MADHAVARAM</option>
+					<option value="MADURAI">MADURAI</option>
+					<option value="MALAYAPATTI">MALAYAPATTI</option> 
+					<option value="MANAMELKUDI">MANAMELKUDI</option>
+					<option value="MANAPARAI">MANAPARAI</option>
+					<option value="MANJINI">MANJINI</option>
+					<option value="MANNARGUDI">MANNARGUDI</option> 
+					<option value="MARAMADAKKI">MARAMADAKKI</option> 
+					<option value="MARTHANDAM">MARTHANDAM</option>
+					<option value="MARUTHAMALAI">MARUTHAMALAI</option> 
+					<option value="MAYANUR">MAYANUR</option> 
+					<option value="MAYILADUTHURAI">MAYILADUTHURAI</option> 
+					<option value="METTUPALAYAM">METTUPALAYAM</option>
+					<option value="METTUPALAYAM (THURAIYUR)">METI ALAYAM (THURAIYUR)</option>
+					<option value="METTUR">METTUR</option> 
+					<option value="METTUPATTI">METTUPATTI</option> 
+					<option value="MIMISAL">MIMISAL</option>
+					<option value="MOHANUR">MOHANUR</option> 
+					<option value="MULANOOR">MULANDOR</option> 
+					<option value="MUSIRI">MUSIRI</option> 
+					<option value="MUTHUKULATHUR">MUTHUKULATHUR</option> 
+					<option value="MUTHUPETTAI">MUTHUPETTAI</option> 
+					<option value="NAGAPATTINAM">NAGAPATTINAM</option> 
+					<option value="NAGERCOIL">NAGERCOIL</option> 
+					<option value="NAGORE">NAGORE</option> 
+					<option value="NAMAKKAL">NAMAKKAL</option> 
+					<option value="NANGUNERI">NANGUNERI</option> 
+					<option value="NANNILAM">NANNILAM</option> 
+					<option value="NARASINGAPURAM">NARASINGAPURAM</option>
+					<option value="NATHAM">NATHAM</option>
+					<option value="NAVALUR">NAVALUR</option> 
+					<option value="NEYVELI">NEYVELI</option> 
+					<option value="NEYVELI TOWNSHIP">NEYVELI TOWNSHIP</option> 
+					<option value="NIDAMANGALAM">NIDAMANGALAM</option> 
+					<option value="ODDAMPATTI">ODDAMPATTI</option> 
+					<option value="0OTY">00TY</option> 
+					<option value="ORATHANADU">ORATHANADU</option>
+					<option value="OTTANCHATHIRAM">OTTANCHATHIRAM</option>
+					<option value="PACHAPERUMAL">PACHAPERUMAL</option> 
+					<option value="PADALUR">PADALUR</option> 
+					<option value="PADUGALAN">PADUGALAM</option> 
+					<option value="PALAKKAD">PALAKKAD</option> 
+					<option value="PALANI">PALANI</option> 
+					<option value="PALAYAM">PALAYAM</option>
+					<option value="PALLADAM">PALLADAM</option> 
+					<option value="PALLAPATTI">PALLAPATTI</option> 
+					<option value="PANDAMANGALAM">PANDAMANGALAM</option> 
+					<option value="PANRUTI">PANRUTI</option>
+					<option value="PAPANASAM (KUM)">PAPANASAM (KUM)</option>
+					<option value="PARAMAKUDI">PARAMAKUDI</option>
+					<option value="PATTUKOTTAI">PATTUKOTTAI</option> 
+					<option value="PERAMBALUR">PERAMBALUR</option>
+					<option value="PERAVOORANI">PERAVOORANI</option>
+					<option value="PERIYAKULAM">PERIYAKULAM</option>
+					<option value="PERUMAGALUR">PERUMAGALUR</option> 
+					<option value="PIRANMALAI">PIRANMALAI</option>
+					<option value="POLLACHI">POLLACHI</option> 
+					<option value="POLUR">POLUR</option> 
+					<option value="PONDICHERRY">PONDICHERRY</option>
+					<option value="PONNAMARAVATHY">PONNAMARAVATHY</option>
+					<option value="POOLAMBADI">POOLAMBADI</option> 
+					<option value="POOLANKURICHY">POOLANKURICHY</option> 
+					<option value="POONAMALLE">POONAMALLE</option> 
+					<option value="POONDI MATHA">POONDI MATHA</option> 
+					<option value="PUDUKOTTAI">PUDUKOTTAI</option> 
+					<option value="PULIANCHOLAI">PULIANCHOLAI</option>
+					<option value="PULIYANGUDI">PULIYANGUDI</option> 
+					<option value="PUTTHUTHOPPU">PUTTHUTHOPPU</option> 
+					<option value="R.S.MANGALAM">R.S.MANGALAM</option> 
+					<option value="RAJAPALAYAM">RAJAPALAYAM</option>
+					<option value="RAMANATHAPURAM">RAMANATHAPURAM</option> 
+					<option value="RAMESWARAM">RAMESWARAM</option> 
+					<option value="RASIPURAM">RASIPURAM</option>
+					<option value="S.PURAM">S.PURAM</option> 
+					<option value="SALEM">SALEM </option>
+					<option value="SANKAGIRI">SANKAGIRI</option> 
+					<option value="SANIKARAPURAM">SANKARAPURAM</option> 
+					<option value="SATHIYAMANGALAM">SATHIYAMANGALAM</option>
+					<option value="SATTUR">SATTUR</option>
+					<option value="SAYALKUDI">SAYALKUDI</option> 
+					<option value="SELLIPALAYAM">SELLIPALAYAM</option> 
+					<option value="SENGOTTAI">SENGOTTAI</option> 
+					<option value="SENTH">SENTH</option> 
+					<option value="SENTHARAPATTI">SENTHARAPATTI</option> 
+					<option value="SIKKAL (NAGAI)">SIKKAL (NAGAI)</option> 
+					<option value="SINGAMPUNARI">SINGAMPUNARI</option> 
+					<option value="SIRKALI">SIRKALI</option>
+					<option value="SIRKAZHI">SIRKAZHI</option>
+					<option value="SIVAGANGAI">SIVAGANGAI</option> 
+					<option value="SOBANAPURAM">SOBANAPURAM</option> 
+					<option value="SOMUR">SOMUR</option> 
+					<option value="SRIPERAMBUDUR">SRIPERAMBUDUR</option> 
+					<option value="SRI MUSHNAM">SRI MUSHNAM</option> 
+					<option value="SRIPERUMBUDUR">SRIPERUMBUDUR</option> 
+					<option value="SRIRA">SRIRA</option>
+					<option value="SRIRANGAM">SRIRANGAM</option> 
+					<option value="SRIVILLIPUTHUR">SRIVILLIPUTHUR</option> 
+					<option value="SUSINDRAM">SUSINDRAM</option>
+					<option value="T.KALAMBUR">T.KALAMBUR</option> 
+					<option value="TENKASI">TENKASI</option>
+					<option value="THAMMAMPATTI">THAMMAMPATTI</option> 
+					<option value="THANJAVUR">THANJAVUR</option> 
+					<option value="THANTHONDRI">THANTHONDRI</option> 
+					<option value="THARAGAMPATTI">THARAGAMPATTI</option> 
+					<option value="THATHAIYANGAR">THATHAIYANGAR</option> 
+					<option value="THENI">THENI</option> 
+					<option value="THENNUR">THENNUR</option> 
+					<option value="THEVARAM">THEVARAM</option> 
+					<option value="THIRUCHENDUR">THIRUCHENDUR</option> 
+					<option value="THIRUCHENGODE">THIRUCHENGODE</option> 
+					<option value="THIRUKATTUPALLI">THIRUKATTUPALLI</option>
+					<option value="THIRUMANOOR">THIRUMANOOR</option> 
+					<option value="THIRUMAYAM">THIRUMAYAM</option> 
+					<option value="THIRUMAZHAPADI">THIRUMAZHAPADI</option> 
+					<option value="THIRUNALLAR (KARAIKKAL)">THIRUNALLAR (KARAIKKAL)</option>
+					<option value="THIRUPUNAVASAL">THIRUPUNAVASAL</option> 
+					<option value="THIRUTHANI">THIRUTHANI</option> 
+					<option value="THIRUTHURAIPOONDI">THIRUTHURAIPOONDI</option> 
+					<option value="THIRUVADANAI">THIRUVADANAI</option> 
+					<option value="THIRUVAIYARU">THIRUVAIYARU</option>
+					<option value="THIRUVARUR">THIRUVARUR</option>
+					<option value="THIRUVETRIYUR">THIRUVETRIYUR</option> 
+					<option value="THOGAIMALAI">THOGAIMALAI</option> 
+					<option value="THONDI">THONDI</option>  
+					<option value="THOOTHUKUDI">THOOTHUKUDI</option>
+					<option value="THOTTIYAM">THOTTIYAM</option> 
+					<option value="THOVALAI">THOVALAI</option> 
+					<option value="THUCKKALAY">THUCKKALAY</option>
+					<option value="THURAIYUR">THURAIYUR</option> 
+					<option value="THUVARANKURICHI">THUVARANKURICHI</option> 
+					<option value="TIRUNELVELI">TIRUNELVELI</option> 
+					<option value="TIRUPATHI">TIRUPATHI</option>
+					<option value="TIRUPATTUR (SIVAGANGAI)">TIRUPATTUR (SIVAGANGAI)</option>
+					<option value="TIRUPATTUR (VELLORE)">TIRUPATTUR (VELLORE)</option>  
+					<option value="TIRUPPUR">TIRUPPUR</option> 
+					<option value="TIRUVANNAHALAI">TIRUVANNAMALAI</option> 
+					<option value="TITTAGUDI">TITTAGUDI</option> 
+					<option value="TITTAGUDI BROR">TITTAGUDI BROR</option>
+					<option value=-"TRICHY">TRICHY</option>
+					<option value="UDUMALPETTAI">UDUMALPETTAI</option>
+					<option value-"TRISSUR">TRISSUR</option> 
+					<option value="ULUNDURPETTAI">ULUNDURPETTAI</option>
+					<option value="UNNIYUR">UNNIYUR</option> 
+					<option value="UPPILIAPPANKOVIL">UPPILIAPPANKOVIL</option>
+					<option value="UPPLIAYAPURAN">UPPLIAYAPURAM</option>
+					<option value="UTHAN">UTHAM</option> 
+					<option value="VADALUR">VADALUR</option>
+					<option value="VADAPATHINANGALAM">VADAPATHIMANGALAN</option> 
+					<option value="VADASERI (PATTUKOTTAI)">VADASERI (PATTUKOTTAI)</option>
+					<option value="VADUGAPATTI">VADUGAPATTI</option>
+					<option value="VADUVUR (MANNAI)">VADUVUR (MANNAI)</option> 
+					<option value="VALLIYOOR">VALLIYOOR</option>
+					<option value="VANDHAVASI">VANDHAVASI</option>
+					<option value="VANNARAPETTAIL">VANNARAPETTAI</option> 
+					<option value="VASHISHAPUR">VASHISHAPUR</option> 
+					<option value="VATAHNAKOTTAI">VATAHNAKOTTAI</option> 
+					<option value="VEDARANYAM">VEDARANYAM</option>
+					<option value="VEDASANDUR">VEDASANDUR</option>
+					<option value="VEERAPPUR">VEERAPPUR</option> 
+					<option value="VELANKANNI">VELANKANNI</option>
+					<option value="VELLAMADAM">VELLAMADAM</option>
+					<option value="VELLORE">VELLORE</option> 
+					<option value="VELLUVADI">VELLUVADI</option> 
+					<option value="VELUR">VELUR</option> 
+					<option value="VENKADATHANUR">VENKADATHANUR</option> 
+					<option value="VEPPUR">VEPPUR</option> 
+					<option value="VILLUPURAM">VILLUPURAM</option> 
+					<option value="VIRUDHACHALAM">VIRUDHACHALAM</option>  
+					<option value="VIRUDHUNAGAR">VIRUDHUNAGAR </option>
+					<option value="VOIMEDU (VEDARANYAM)">VOIMEDU (VEDARANYAM)</option>
+
+            </select>
+            
+            <label for="timing">Timing</label>
+            <input type="time" name="timing" required>
+            
+             <label for="amount">Ticket Price </label>
+            <input type="number" name="amount" required>
+
+            <button type="submit">Register Book</button>
+
+</body>
+
+</html>
